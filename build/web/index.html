@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE HTML>
+<html>
+    <head><title>Send Time</title></head>
+<body>
+	
+	<button onclick="get_data()">Start</button>
+	<br><br>
+        <span id="foo"></span>
+
+	<script type="text/javascript">
+        var i=0;
+        var eventSource;
+        
+        function get_data(){
+            eventSource = new EventSource("SendTime");
+            /*/
+            eventSource.onmessage = function(event){
+               var t = new Date(parseInt(event.data)).toLocaleString();
+               document.getElementById('foo').innerHTML += t + "<br/>";
+            };*/
+            eventSource.addEventListener("timestamp", function(event){
+               var t = new Date(parseInt(event.data)).toLocaleString()
+               document.getElementById('foo').innerHTML += t + "<br/>";
+            }, false);	
+            eventSource.addEventListener("DONE", function(event){
+               eventSource.close(); 
+            }, false);
+        }
+        
+	</script>
+</body>
+</html>
