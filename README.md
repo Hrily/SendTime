@@ -1,5 +1,5 @@
 # SendTime
-Java Servlet that sends client the server time every two second for a minute 
+Java Servlet that sends client the server time every two second for a minute, using Server Sent Events
 
 ###Server does following process:
   + On request from client, start sending server time to client
