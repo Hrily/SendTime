@@ -13,6 +13,7 @@ Java Servlet that sends client the server time every two second for a minute, us
 	Client Side : JavaScript
 
 To run server, goto the SendTime directory and type:
-	'python SendTime.py'
+
+	`python SendTime.py`
 
 Then goto [127.0.0.1:8001](127.0.0.1:8001) in browser
