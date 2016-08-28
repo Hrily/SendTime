@@ -1,5 +1,5 @@
 # SendTime - Python 
-Java Servlet that sends client the server time every two second for a minute, using Server Sent Events
+Python Server that sends client the server time every two second for a minute, using Server Sent Events
 
 
 ###Server does following process:
